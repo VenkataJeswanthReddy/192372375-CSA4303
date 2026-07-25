@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internet Programming - Web Technologies Analysis</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f8ff;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    background-color: #003366;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.section{
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px lightgray;
+}
+
+h2{
+    color: #003366;
+}
+
+pre{
+    background-color: #eeeeee;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td{
+    border: 1px solid black;
+}
+
+th, td{
+    padding: 8px;
+    text-align: center;
+}
+
+.answer{
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-left: 5px solid #003366;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Internet Programming - Web Technologies Analysis</h1>
+
+<!-- Question 1 -->
+
+<div class="section">
+<h2>1. HTTP Response Analysis</h2>
+
+<pre>
+HTTP/1.1 200 OK
+Date: Mon, 01 Apr 2026 10:00:00 GMT
+Content-Type: text/html
+Content-Length: -150
+Connection: keep-alive
+</pre>
+
+<p><b>1. Identify any incorrect or invalid fields in the header.</b></p>
+<div class="answer">
+Content-Length is invalid because it contains a negative value.
+</div>
+
+<p><b>2. Analyze the issue with Content-Length and explain its impact.</b></p>
+<div class="answer">
+Content-Length specifies the size of the response body in bytes. A negative value may cause browsers to reject or improperly display the webpage.
+</div>
+
+<p><b>3. Determine whether the status code matches the response correctness.</b></p>
+<div class="answer">
+The status code 200 OK indicates success, but the invalid Content-Length field makes the response incorrect.
+</div>
+
+<p><b>4. Suggest corrections for the identified errors.</b></p>
+<div class="answer">
+Replace Content-Length with a positive value such as 150.
+</div>
+</div>
+
+
+
+<!-- Question 2 -->
+
+<div class="section">
+<h2>2. DOM Structure Analysis</h2>
+
+<pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Test Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div&gt;
+      &lt;p&gt;Hello World
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p><b>1. Identify missing or improperly closed elements.</b></p>
+<div class="answer">
+The paragraph tag (&lt;p&gt;) is missing its closing tag (&lt;/p&gt;).
+</div>
+
+<p><b>2. Analyze how the browser will interpret this structure.</b></p>
+<div class="answer">
+Modern browsers automatically close missing tags and display the content correctly.
+</div>
+
+<p><b>3. Determine the impact on rendering and layout.</b></p>
+<div class="answer">
+The webpage may render properly, but the HTML structure is invalid and may cause issues in complex webpages.
+</div>
+
+<p><b>4. Suggest corrections to make the DOM valid.</b></p>
+<div class="answer">
+Add the missing &lt;/p&gt; tag before the closing &lt;/div&gt; tag.
+</div>
+</div>
+
+
+
+<!-- Question 3 -->
+
+<div class="section">
+<h2>3. GET vs POST in Login System</h2>
+
+<table>
+<tr>
+<th>Method</th>
+<th>URL Example</th>
+<th>Data Visibility</th>
+<th>Security Level</th>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>/login?user=admin&pass=1234</td>
+<td>Visible in URL</td>
+<td>Low</td>
+</tr>
+
+<tr>
+<td>POST</td>
+<td>/login</td>
+<td>Hidden in Request Body</td>
+<td>Moderate</td>
+</tr>
+</table>
+
+<br>
+
+<p><b>1. Interpret the differences in data transmission between GET and POST.</b></p>
+<div class="answer">
+GET sends data through the URL, whereas POST sends data through the request body.
+</div>
+
+<p><b>2. Analyze which method is more suitable for login and why.</b></p>
+<div class="answer">
+POST is more suitable because login credentials are not exposed in the URL.
+</div>
+
+<p><b>3. Identify security risks in using GET for authentication.</b></p>
+<div class="answer">
+Passwords may be stored in browser history, bookmarks, and server logs.
+</div>
+
+<p><b>4. Suggest best practices for secure login implementation.</b></p>
+<div class="answer">
+Use POST requests, HTTPS, secure password storage, and proper session management.
+</div>
+</div>
+
+
+
+<!-- Question 4 -->
+
+<div class="section">
+<h2>4. HTML Code Inspection</h2>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Sample&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome
+&lt;p&gt;This is a paragraph
+&lt;img src="image.jpg"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p><b>1. Identify missing closing tags.</b></p>
+<div class="answer">
+The closing tags &lt;/h1&gt; and &lt;/p&gt; are missing.
+</div>
+
+<p><b>2. Analyze issues with the img tag.</b></p>
+<div class="answer">
+The image tag should include an alt attribute for accessibility and the image file should exist in the correct location.
+</div>
+
+<p><b>3. Determine how browsers will handle these errors.</b></p>
+<div class="answer">
+Browsers automatically correct many minor HTML errors, but the code is not standards compliant.
+</div>
+
+<p><b>4. Suggest a corrected version of the code.</b></p>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Sample&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Welcome&lt;/h1&gt;
+
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;img src="image.jpg" alt="Sample Image"&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+</div>
+
+
+
+<!-- Question 5 -->
+
+<div class="section">
+<h2>5. Browser-Server Communication Flow</h2>
+
+<ol>
+<li>User enters a URL in the browser.</li>
+<li>DNS lookup occurs.</li>
+<li>HTTP request is sent.</li>
+<li>Server processes the request.</li>
+<li>Response is returned.</li>
+<li>Browser renders the webpage.</li>
+</ol>
+
+<p><b>1. Interpret each step in the communication flow.</b></p>
+<div class="answer">
+The browser locates the web server, sends the request, receives the response, and displays the webpage.
+</div>
+
+<p><b>2. Identify where delays can occur.</b></p>
+<div class="answer">
+Delays may occur during DNS lookup, network communication, server processing, and browser rendering.
+</div>
+
+<p><b>3. Analyze the role of DNS in the process.</b></p>
+<div class="answer">
+DNS converts the domain name into an IP address so that the browser can communicate with the correct server.
+</div>
+
+<p><b>4. Suggest optimizations to improve performance.</b></p>
+<div class="answer">
+Use DNS caching, browser caching, CDNs, compressed resources, and optimized server responses.
+</div>
+</div>
+
+
+
+<!-- Question 6 -->
+
+<div class="section">
+<h2>6. Learning Outcome</h2>
+
+<p>
+This webpage demonstrates:
+</p>
+
+<ul>
+<li>HTTP response header analysis.</li>
+<li>DOM structure validation.</li>
+<li>Secure use of GET and POST methods.</li>
+<li>Standards-compliant HTML coding practices.</li>
+<li>Browser-server communication mechanisms.</li>
+<li>Performance optimization techniques for web applications.</li>
+</ul>
+
+<p>
+These concepts satisfy the learning outcome of developing well-structured,
+standards-compliant web pages using HTML/XHTML and Internet protocols for web
+content delivery.
+</p>
+
+</div>
+
+</body>
+</html>
