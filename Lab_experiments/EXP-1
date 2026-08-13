@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Infinity Library | Smart Library Management System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#141E30);
+background-size:400% 400%;
+animation:bg 15s ease infinite;
+color:white;
+
+}
+
+@keyframes bg{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+header{
+
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+z-index:999;
+
+}
+
+.logo{
+
+font-size:30px;
+font-weight:bold;
+color:#00e6ff;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+margin:0 18px;
+font-weight:600;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#00ffff;
+
+}
+
+.btn{
+
+padding:12px 24px;
+border:none;
+border-radius:30px;
+background:#00d9ff;
+color:black;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-3px);
+box-shadow:0 10px 25px cyan;
+
+}
+
+.hero{
+
+padding-top:150px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding-left:8%;
+padding-right:8%;
+min-height:100vh;
+
+}
+
+.hero-text{
+
+width:55%;
+
+}
+
+.hero-text h1{
+
+font-size:58px;
+line-height:1.2;
+margin-bottom:20px;
+
+}
+
+.hero-text span{
+
+color:#00ffff;
+
+}
+
+.hero-text p{
+
+font-size:19px;
+color:#ddd;
+line-height:32px;
+margin-bottom:30px;
+
+}
+
+.hero-image{
+
+width:38%;
+
+}
+
+.hero-image img{
+
+width:100%;
+animation:float 4s infinite;
+
+}
+
+@keyframes float{
+
+50%{
+transform:translateY(-18px);
+}
+
+}
+
+section{
+
+padding:90px 8%;
+
+}
+
+.title{
+
+text-align:center;
+font-size:42px;
+margin-bottom:60px;
+color:#00ffff;
+
+}
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:20px;
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,255,255,.25);
+
+}
+
+.card h2{
+
+margin-bottom:20px;
+color:#00ffff;
+
+}
+
+.card ul{
+
+padding-left:20px;
+
+}
+
+.card li{
+
+margin:12px 0;
+
+}
+
+.stats{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+
+}
+
+.stat{
+
+background:rgba(255,255,255,.08);
+padding:40px;
+border-radius:20px;
+text-align:center;
+
+}
+
+.stat h1{
+
+font-size:55px;
+color:#00ffff;
+
+}
+
+.search{
+
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:40px;
+
+}
+
+.search input{
+
+width:500px;
+padding:18px;
+border:none;
+border-radius:40px;
+font-size:18px;
+
+}
+
+.materials{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+
+}
+
+.material{
+
+background:rgba(255,255,255,.08);
+padding:25px;
+border-radius:20px;
+
+}
+
+.material h3{
+
+margin-bottom:15px;
+color:#00ffff;
+
+}
+
+.material button{
+
+margin-top:15px;
+
+}
+
+.contact{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+
+}
+
+.contact form{
+
+background:rgba(255,255,255,.08);
+padding:35px;
+border-radius:20px;
+
+}
+
+.contact input,
+.contact textarea{
+
+width:100%;
+padding:15px;
+margin:15px 0;
+border:none;
+border-radius:10px;
+font-size:16px;
+
+}
+
+footer{
+
+text-align:center;
+padding:35px;
+background:#08131d;
+
+}
+
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+.hero-text,.hero-image{
+
+width:100%;
+
+}
+
+.hero-image{
+
+margin-top:40px;
+
+}
+
+.contact{
+
+grid-template-columns:1fr;
+
+}
+
+.search{
+
+flex-direction:column;
+
+}
+
+.search input{
+
+width:100%;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">📚 Infinity Library</div>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#materials">Materials</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<button class="btn">Login</button>
+
+</header>
+
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>Smart <span>Library Management</span><br>System</h1>
+
+<p>
+
+A modern digital platform that helps librarians and students manage books,
+track borrowing records, calculate fines, download study materials,
+and access library resources anytime.
+
+</p>
+
+<button class="btn">Explore Library</button>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=700">
+
+</div>
+
+</div>
+
+<section>
+
+<h1 class="title">Library Overview</h1>
+
+<div class="stats">
+
+<div class="stat">
+<h1>15K+</h1>
+<p>Books Available</p>
+</div>
+
+<div class="stat">
+<h1>2500+</h1>
+<p>Students</p>
+</div>
+
+<div class="stat">
+<h1>450+</h1>
+<p>Materials</p>
+</div>
+
+<div class="stat">
+<h1>99%</h1>
+<p>Availability</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<h1 class="title">Portal Features</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>👨‍💼 Librarian Admin</h2>
+
+<ul>
+
+<li>Secure Login</li>
+
+<li>Add New Books</li>
+
+<li>Update Book Information</li>
+
+<li>Delete Books</li>
+
+<li>Issue Books to Students</li>
+
+<li>Return Book Management</li>
+
+<li>Fine Calculation</li>
+
+<li>Upload Semester Materials</li>
+
+<li>Update Materials</li>
+
+<li>View Complete Inventory</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>🎓 Student Portal</h2>
+
+<ul>
+
+<li>Student Registration</li>
+
+<li>Secure Login</li>
+
+<li>Book Search</li>
+
+<li>Borrow History</li>
+
+<li>Issue Date</li>
+
+<li>Expected Return Date</li>
+
+<li>Fine Status</li>
+
+<li>Semester Material Search</li>
+
+<li>Download PDF Materials</li>
+
+<li>Manage Profile</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>🚀 Smart Services</h2>
+
+<ul>
+
+<li>Real-Time Search</li>
+
+<li>Digital Book Catalogue</li>
+
+<li>Automated Fine System</li>
+
+<li>Responsive Dashboard</li>
+
+<li>Download Center</li>
+
+<li>Email Contact Form</li>
+
+<li>Cloud Ready Design</li>
+
+<li>Modern User Interface</li>
+
+<li>Fast Navigation</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">Find Your Book</h1>
+
+<div class="search">
+
+<input type="text" placeholder="Search by Book Title, Author or ISBN">
+
+<button class="btn">Search</button>
+
+</div>
+
+</section>
+
+<section id="materials">
+
+<h1 class="title">Academic Materials</h1>
+
+<div class="materials">
+
+<div class="material">
+
+<h3>📖 First Year</h3>
+
+<p>Semester 1 & Semester 2 Study Materials</p>
+
+<button class="btn">Download</button>
+
+</div>
+
+<div class="material">
+
+<h3>💻 Second Year</h3>
+
+<p>Programming, DSA, Database Systems</p>
+
+<button class="btn">Download</button>
+
+</div>
+
+<div class="material">
+
+<h3>🌐 Third Year</h3>
+
+<p>Web Development, AI, Cloud Computing</p>
+
+<button class="btn">Download</button>
+
+</div>
+
+<div class="material">
+
+<h3>🎓 Final Year</h3>
+
+<p>Capstone Projects & Placement Resources</p>
+
+<button class="btn">Download</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">Contact Library</h1>
+
+<div class="contact">
+
+<div>
+
+<h2 style="margin-bottom:20px;color:#00ffff;">Library Information</h2>
+
+<p style="line-height:35px;font-size:18px;">
+
+📍 Saveetha School of Engineering<br><br>
+
+📞 +91 9876543210<br><br>
+
+📧 library@college.edu<br><br>
+
+🕘 Monday - Saturday<br>
+
+09:00 AM - 06:00 PM
+
+</p>
+
+</div>
+
+<form>
+
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email">
+
+<input type="text" placeholder="Subject">
+
+<textarea rows="6" placeholder="Message"></textarea>
+
+<button class="btn">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>📚 Infinity Library Management System</h2>
+
+<p style="margin-top:10px;">
+Designed for Students & Librarians • Internet Programming Project
+</p>
+
+<p style="margin-top:15px;">
+© 2026 All Rights Reserved
+</p>
+
+</footer>
+
+<script>
+
+const buttons=document.querySelectorAll(".btn");
+
+buttons.forEach(button=>{
+
+button.addEventListener("mouseenter",()=>{
+
+button.style.transform="scale(1.05)";
+
+});
+
+button.addEventListener("mouseleave",()=>{
+
+button.style.transform="scale(1)";
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
