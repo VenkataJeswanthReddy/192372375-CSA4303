@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Development Standards Implementation</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color:#f4f8fc;
+    line-height:1.6;
+}
+
+header{
+    background:#0d6efd;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+nav{
+    background:#084298;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:20px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+section{
+    background:white;
+    margin:25px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0px 0px 10px lightgray;
+}
+
+h2{
+    color:#0d6efd;
+    margin-bottom:15px;
+}
+
+p{
+    margin-bottom:15px;
+}
+
+video{
+    border-radius:10px;
+    width:100%;
+    max-width:600px;
+}
+
+label{
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+}
+
+button{
+    background:#0d6efd;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#084298;
+}
+
+pre{
+    background:#eeeeee;
+    padding:15px;
+    border-radius:5px;
+    overflow:auto;
+}
+
+ul{
+    margin-left:20px;
+}
+
+footer{
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+
+<h1>Web Development Standards Implementation</h1>
+<p>Modern Web Application Development Assignment</p>
+
+</header>
+
+
+
+<nav>
+
+<a href="#video">Video</a>
+<a href="#form">Registration</a>
+<a href="#navigation">Navigation</a>
+<a href="#xml">XML</a>
+<a href="#protocol">HTTP</a>
+
+</nav>
+
+
+
+<section id="video">
+
+<h2>1. HTML5 Video Embedding</h2>
+
+<p>
+The HTML5 &lt;video&gt; tag is used to embed promotional videos on web pages.
+</p>
+
+<video controls autoplay muted loop>
+
+<source
+src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+type="video/mp4">
+
+Your browser does not support the video tag.
+
+</video>
+
+</section>
+
+
+
+
+<section id="form">
+
+<h2>2. Registration Form (POST Method)</h2>
+
+<p>
+The POST method securely sends user information to the server.
+</p>
+
+<form action="#" method="POST">
+
+<label>Full Name</label>
+<input type="text" placeholder="Enter your name" required>
+
+
+<label>Email Address</label>
+<input type="email" placeholder="Enter your email" required>
+
+
+<label>Password</label>
+<input type="password" placeholder="Enter your password" required>
+
+
+<button type="submit">Register</button>
+
+</form>
+
+</section>
+
+
+
+
+<section id="navigation">
+
+<h2>3. Semantic Navigation Element</h2>
+
+<p>
+The semantic HTML &lt;nav&gt; element is used to represent navigation links.
+It improves accessibility and search engine optimization.
+</p>
+
+<pre>
+<nav>
+   Home
+   About
+   Services
+   Contact
+</nav>
+</pre>
+
+</section>
+
+
+
+
+<section id="xml">
+
+<h2>4. Correct XML Syntax</h2>
+
+<p>
+XML documents must follow proper syntax rules.
+</p>
+
+<pre>
+&lt;?xml version="1.0"?&gt;
+
+&lt;note&gt;
+    &lt;to&gt;User&lt;/to&gt;
+    &lt;from&gt;Admin&lt;/from&gt;
+&lt;/note&gt;
+</pre>
+
+
+<h3>XML Rules</h3>
+
+<ul>
+<li>Every opening tag must have a closing tag.</li>
+<li>Tags must be properly nested.</li>
+<li>XML is case-sensitive.</li>
+<li>XML documents should be well-formed.</li>
+</ul>
+
+</section>
+
+
+
+
+<section id="protocol">
+
+<h2>5. Web Communication Protocol (HTTP/HTTPS)</h2>
+
+<p>
+HTTP (HyperText Transfer Protocol) is used for communication between
+the browser and the web server.
+</p>
+
+<p>
+HTTPS is the secure version of HTTP that encrypts user data during
+communication.
+</p>
+
+<pre>
+
+Browser
+   |
+HTTP Request
+   |
+Web Server
+   |
+HTTP Response
+   |
+Displays Web Page
+
+</pre>
+
+</section>
+
+
+
+
+<footer>
+
+<p>Submitted for Web Technologies Assignment</p>
+
+</footer>
+
+
+
+</body>
+</html>
