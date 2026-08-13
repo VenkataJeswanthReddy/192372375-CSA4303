@@ -3,385 +3,393 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Online Flight Reservation System</title>
+
+<title>SwiftBus | Online Bus Ticket Booking System</title>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#f4f7fc;
+background:#eef3f8;
+color:#222;
 }
 
-/* Navigation Bar */
-
-nav{
-    background:#003366;
-    color:white;
-    padding:18px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:#0B2545;
+z-index:1000;
 }
 
-nav h1{
-    font-size:28px;
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#FFD700;
 }
 
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
+nav a{
+color:white;
+text-decoration:none;
+margin:0 18px;
+font-weight:600;
+transition:.3s;
 }
 
-nav li{
-    cursor:pointer;
+nav a:hover{
+color:#FFD700;
 }
 
-/* Hero Section */
+.btn{
+background:#FFD700;
+padding:12px 24px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+background:#f4c400;
+}
 
 .hero{
-    background:linear-gradient(to right,#004e92,#000428);
-    color:white;
-    text-align:center;
-    padding:70px 20px;
+height:100vh;
+background:url("https://images.unsplash.com/photo-1509749837427-ac94a2553d0e?w=1600") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
 }
 
-.hero h2{
-    font-size:42px;
-    margin-bottom:15px;
+.overlay{
+background:rgba(0,0,0,.6);
+padding:60px;
+border-radius:20px;
+color:white;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:20px;
 }
 
 .hero p{
-    font-size:18px;
-    margin-bottom:20px;
+font-size:20px;
+margin-bottom:30px;
+line-height:30px;
 }
-
-.hero button{
-    padding:12px 25px;
-    margin:5px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-    font-weight:bold;
-}
-
-.login{
-    background:white;
-    color:#003366;
-}
-
-.register{
-    background:#00c6ff;
-    color:white;
-}
-
-/* Section */
 
 section{
-    padding:50px;
+padding:90px 8%;
 }
 
 .title{
-    text-align:center;
-    margin-bottom:30px;
-    color:#003366;
-    font-size:35px;
+text-align:center;
+font-size:42px;
+margin-bottom:50px;
+color:#0B2545;
 }
 
-.container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+.search{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 }
 
-/* Cards */
+.search input,
+.search select{
+padding:15px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
 
 .card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 0 15px rgba(0,0,0,0.1);
-    transition:0.4s;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+transform:translateY(-10px);
 }
 
-.card h3{
-    color:#0057b8;
-    margin-bottom:15px;
+.card h2{
+color:#0B2545;
+margin-bottom:20px;
 }
 
 .card ul{
-    padding-left:20px;
-    line-height:30px;
+padding-left:20px;
 }
 
-/* Search Form */
-
-.search-box{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 0 15px rgba(0,0,0,0.1);
-    max-width:900px;
-    margin:auto;
+.card li{
+margin:10px 0;
 }
 
-.search-box input,
-.search-box select{
-    width:100%;
-    padding:12px;
-    margin-top:10px;
-    margin-bottom:20px;
-    border-radius:8px;
-    border:1px solid gray;
+.bus-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
-.search-box button{
-    background:#003366;
-    color:white;
-    padding:12px 25px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
+.bus{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
 }
 
-/* Flight Cards */
-
-.flight-card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 0 15px rgba(0,0,0,0.1);
+.bus img{
+width:100%;
+height:200px;
+object-fit:cover;
 }
 
-.flight-card p{
-    margin-bottom:10px;
+.bus div{
+padding:20px;
 }
 
-.flight-card button{
-    background:#0077ff;
-    color:white;
-    padding:10px 20px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 }
 
-/* Feedback */
-
-.feedback{
-    background:#eaf3ff;
-    text-align:center;
-    padding:50px;
+.stat{
+background:#0B2545;
+color:white;
+padding:35px;
+text-align:center;
+border-radius:15px;
 }
 
-.feedback input,
-.feedback textarea{
-
-    width:70%;
-    padding:12px;
-    margin:10px;
-    border-radius:8px;
-    border:1px solid gray;
+.stat h1{
+font-size:48px;
+color:#FFD700;
 }
 
-.feedback button{
-    background:#003366;
-    color:white;
-    padding:12px 25px;
-    border:none;
-    border-radius:8px;
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
 }
 
-/* Footer */
+.contact form{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:15px;
+margin:12px 0;
+border:1px solid #ccc;
+border-radius:8px;
+}
 
 footer{
-    background:#003366;
-    color:white;
-    text-align:center;
-    padding:20px;
+background:#111;
+color:white;
+text-align:center;
+padding:35px;
 }
 
-@media(max-width:768px){
+@media(max-width:900px){
 
-.hero h2{
-    font-size:32px;
+nav{
+display:none;
 }
 
-.feedback input,
-.feedback textarea{
-    width:100%;
+.hero h1{
+font-size:40px;
+}
+
+.contact{
+grid-template-columns:1fr;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<header>
+
+<div class="logo">🚌 SwiftBus</div>
 
 <nav>
 
-<h1>SkyWings Airlines</h1>
-
-<ul>
-<li>Home</li>
-<li>Flights</li>
-<li>Tickets</li>
-<li>Admin</li>
-<li>Feedback</li>
-<li>Contact</li>
-</ul>
+<a href="#">Home</a>
+<a href="#search">Search</a>
+<a href="#services">Services</a>
+<a href="#admin">Admin</a>
+<a href="#contact">Contact</a>
 
 </nav>
 
-<!-- HERO SECTION -->
+<button class="btn">Login</button>
+
+</header>
 
 <div class="hero">
 
-<h2>Online Flight Reservation System</h2>
+<div class="overlay">
 
-<p>Search, Book and Manage Your Flights Anytime, Anywhere.</p>
+<h1>Online Bus Ticket Booking</h1>
 
-<button class="login">Login</button>
-<button class="register">Register</button>
+<p>
+Book bus tickets, select seats, manage reservations, and travel safely across the country with a modern booking experience.
+</p>
+
+<button class="btn">Book Tickets</button>
 
 </div>
 
-
-<!-- LOGIN FEATURES -->
+</div>
 
 <section>
 
-<h2 class="title">User Services</h2>
+<h1 class="title">Our Journey</h1>
 
-<div class="container">
+<div class="stats">
 
-<div class="card">
-<h3>Account Services</h3>
-<ul>
-<li>User Login</li>
-<li>Forgot Password</li>
-<li>Profile Management</li>
-<li>Booking History</li>
-</ul>
+<div class="stat">
+<h1>500+</h1>
+<p>Buses</p>
 </div>
 
-<div class="card">
-<h3>Ticket Services</h3>
-<ul>
-<li>My Tickets</li>
-<li>Cancel Ticket</li>
-<li>Print Ticket</li>
-<li>View Booking Status</li>
-</ul>
+<div class="stat">
+<h1>120+</h1>
+<p>Routes</p>
 </div>
 
-<div class="card">
-<h3>Travel Services</h3>
-<ul>
-<li>Travel Itinerary</li>
-<li>E-Ticket Download</li>
-<li>Confirmation Email</li>
-<li>Seat Selection</li>
-</ul>
+<div class="stat">
+<h1>2 Lakh+</h1>
+<p>Happy Travelers</p>
+</div>
+
+<div class="stat">
+<h1>24×7</h1>
+<p>Customer Support</p>
 </div>
 
 </div>
 
 </section>
 
+<section id="search">
 
-<!-- SEARCH FLIGHTS -->
+<h1 class="title">Search Buses</h1>
 
-<section>
-
-<h2 class="title">Search Flights</h2>
-
-<div class="search-box">
+<div class="search">
 
 <input type="text" placeholder="From">
 
-<input type="text" placeholder="Destination">
+<input type="text" placeholder="To">
 
 <input type="date">
 
 <select>
-<option>Select Class</option>
-<option>Economy</option>
-<option>Business</option>
-<option>First Class</option>
+
+<option>Morning</option>
+<option>Afternoon</option>
+<option>Evening</option>
+<option>Night</option>
+
 </select>
 
-<input type="number" placeholder="Number of Passengers">
-
-<button>Search Flights</button>
+<button class="btn">Search</button>
 
 </div>
 
 </section>
 
-
-<!-- AVAILABLE FLIGHTS -->
-
 <section>
 
-<h2 class="title">Available Flights</h2>
+<h1 class="title">Bus Categories</h1>
 
-<div class="container">
+<div class="bus-grid">
 
-<div class="flight-card">
+<div class="bus">
 
-<h3>AI-203</h3>
+<img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600">
 
-<p>Departure : 08:00 AM</p>
-<p>Arrival : 10:30 AM</p>
-<p>Seats Available : 6</p>
-<p>Fare : $120</p>
+<div>
 
-<button>Book Ticket</button>
+<h2>Volvo AC</h2>
 
-</div>
+<p>Luxury seating with air conditioning.</p>
 
+<p><b>Available Seats: 24</b></p>
 
-<div class="flight-card">
-
-<h3>IN-401</h3>
-
-<p>Departure : 01:30 PM</p>
-<p>Arrival : 03:50 PM</p>
-<p>Seats Available : 10</p>
-<p>Fare : $150</p>
-
-<button>Book Ticket</button>
+<button class="btn">Book Seat</button>
 
 </div>
 
+</div>
 
-<div class="flight-card">
+<div class="bus">
 
-<h3>SK-782</h3>
+<img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=600">
 
-<p>Departure : 06:00 PM</p>
-<p>Arrival : 08:15 PM</p>
-<p>Seats Available : 4</p>
-<p>Fare : $210</p>
+<div>
 
-<button>Book Ticket</button>
+<h2>Sleeper Coach</h2>
+
+<p>Comfortable overnight sleeper buses.</p>
+
+<p><b>Available Seats: 18</b></p>
+
+<button class="btn">Book Seat</button>
+
+</div>
+
+</div>
+
+<div class="bus">
+
+<img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600">
+
+<div>
+
+<h2>Luxury Coach</h2>
+
+<p>Premium reclining seats with Wi-Fi.</p>
+
+<p><b>Available Seats: 15</b></p>
+
+<button class="btn">Book Seat</button>
+
+</div>
 
 </div>
 
@@ -389,122 +397,193 @@ footer{
 
 </section>
 
+<section id="services">
 
-<!-- PAYMENT SERVICES -->
+<h1 class="title">User Dashboard</h1>
 
-<section>
-
-<h2 class="title">Reservation Services</h2>
-
-<div class="container">
+<div class="cards">
 
 <div class="card">
-<h3>Booking Process</h3>
+
+<h2>👤 User Features</h2>
+
 <ul>
-<li>Select Flight</li>
-<li>Select Seats</li>
+<li>User Registration</li>
+<li>Secure Login</li>
+<li>Forgot Password</li>
+<li>Book Bus Tickets</li>
+<li>Select Preferred Seats</li>
+<li>View Booking History</li>
+<li>Cancel Tickets</li>
+<li>Secure Online Payment</li>
+<li>Email Confirmation</li>
+<li>Post Comments & Reviews</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>🎫 Booking Information</h2>
+
+<ul>
 <li>Passenger Details</li>
-<li>Book Ticket</li>
+<li>Journey Date</li>
+<li>Bus Number</li>
+<li>Departure Time</li>
+<li>Arrival Time</li>
+<li>Seat Number</li>
+<li>Payment Status</li>
+<li>Download Ticket</li>
 </ul>
-</div>
 
-<div class="card">
-<h3>Payment Services</h3>
-<ul>
-<li>Secure Payment Gateway</li>
-<li>Online Payment</li>
-<li>Payment Confirmation</li>
-<li>E-Ticket Generation</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Booking Management</h3>
-<ul>
-<li>View Status</li>
-<li>Modify Reservation</li>
-<li>Cancel Ticket</li>
-<li>Print Ticket</li>
-</ul>
 </div>
 
 </div>
 
 </section>
 
+<section id="admin">
 
-<!-- ADMIN PANEL -->
+<h1 class="title">Administrator Panel</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>🛠 Bus Management</h2>
+
+<ul>
+<li>Add Bus Categories</li>
+<li>Update Bus Information</li>
+<li>Upload Bus Photos</li>
+<li>Manage Seat Availability</li>
+<li>Route Management</li>
+<li>Bus Description</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>👥 User Management</h2>
+
+<ul>
+<li>Manage Registered Users</li>
+<li>Change Booking Details</li>
+<li>Cancel Any Booking</li>
+<li>Manage Comments</li>
+<li>Publish News</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>📊 Reports</h2>
+
+<ul>
+<li>Daily Bookings</li>
+<li>Revenue Reports</li>
+<li>Seat Occupancy Report</li>
+<li>User Activity Report</li>
+<li>Generate Reports</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
 
 <section>
 
-<h2 class="title">Administrator Panel</h2>
+<h1 class="title">Customer Reviews</h1>
 
-<div class="container">
+<div class="cards">
 
 <div class="card">
-<h3>Flight Management</h3>
-<ul>
-<li>Manage Flight Schedule</li>
-<li>Update Flight Details</li>
-<li>Manage Inventory</li>
-</ul>
+<h2>⭐⭐⭐⭐⭐</h2>
+<p>"Very comfortable journey and easy booking process."</p>
 </div>
 
 <div class="card">
-<h3>Seat Management</h3>
-<ul>
-<li>Update Seat Availability</li>
-<li>Manage Reservations</li>
-<li>Real-Time Inventory</li>
-</ul>
+<h2>⭐⭐⭐⭐⭐</h2>
+<p>"Seat selection and payment were fast and secure."</p>
 </div>
 
 <div class="card">
-<h3>User Management</h3>
-<ul>
-<li>Manage User Accounts</li>
-<li>Booking Reports</li>
-<li>Admin Reports</li>
-</ul>
+<h2>⭐⭐⭐⭐⭐</h2>
+<p>"Excellent customer support and on-time buses."</p>
 </div>
 
 </div>
 
 </section>
 
+<section id="contact">
 
-<!-- FEEDBACK -->
+<h1 class="title">Contact Us</h1>
 
-<div class="feedback">
+<div class="contact">
 
-<h2>Customer Feedback</h2>
+<div>
 
-<br>
-
-<input type="text" placeholder="Enter Your Name">
-
-<br>
-
-<input type="email" placeholder="Enter Email Address">
+<h2>SwiftBus Support</h2>
 
 <br>
 
-<textarea rows="5" placeholder="Share Your Experience"></textarea>
+<p>📍 Chennai, Tamil Nadu</p><br>
 
-<br>
+<p>📞 +91 9876543210</p><br>
 
-<button>Submit Feedback</button>
+<p>📧 support@swiftbus.com</p><br>
+
+<p>🕒 24×7 Customer Care</p>
 
 </div>
 
+<form>
 
-<!-- FOOTER -->
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email">
+
+<input type="text" placeholder="Subject">
+
+<textarea rows="6" placeholder="Your Message"></textarea>
+
+<button class="btn">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
 
 <footer>
 
-<p>© 2026 Online Flight Reservation System | Internet Programming Lab Project</p>
+<h2>🚌 SwiftBus Online Bus Ticket Booking System</h2>
+
+<p style="margin-top:15px;">Internet Programming Laboratory Project</p>
+
+<p style="margin-top:10px;">© 2026 SwiftBus. All Rights Reserved.</p>
 
 </footer>
+
+<script>
+
+document.querySelectorAll(".btn").forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+alert("Demo Project - Backend can be connected using PHP, JSP, Servlet, Node.js, or Java.");
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
