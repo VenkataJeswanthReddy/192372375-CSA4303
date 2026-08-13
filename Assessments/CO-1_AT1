@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CO-1 Assessment - Internet Programming</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Calibri, Arial, sans-serif;
+    background-color:#f4f6f9;
+    line-height:1.8;
+    color:#333;
+}
+
+.container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+    padding:30px;
+}
+
+.header{
+    background:#002147;
+    color:white;
+    padding:30px;
+    text-align:center;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.header h1{
+    margin-bottom:10px;
+    font-size:38px;
+}
+
+.header p{
+    font-size:18px;
+}
+
+.info-box{
+    margin-top:25px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px lightgray;
+}
+
+.info-box h3{
+    color:#002147;
+}
+
+.question{
+    margin-top:30px;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 0 12px rgba(0,0,0,0.1);
+    overflow:hidden;
+}
+
+.question-title{
+    background:#002147;
+    color:white;
+    padding:18px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.content{
+    padding:25px;
+}
+
+.sub-heading{
+    color:#002147;
+    margin-top:15px;
+    margin-bottom:10px;
+}
+
+.code-box{
+    background:#1E1E1E;
+    color:#7CFC00;
+    padding:18px;
+    border-radius:8px;
+    overflow-x:auto;
+    font-family:Consolas;
+    margin-bottom:20px;
+}
+
+.answer{
+    background:#F7FAFC;
+    border-left:5px solid #002147;
+    padding:20px;
+    border-radius:8px;
+}
+
+.answer ol{
+    padding-left:25px;
+}
+
+.answer li{
+    margin-bottom:15px;
+}
+
+.footer{
+    margin-top:40px;
+    text-align:center;
+    color:#666;
+    padding:20px;
+}
+
+strong{
+    color:#002147;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<h1>CO-1 Assessment Tool</h1>
+
+<p>
+Develop well-structured, standards-compliant web pages using HTML/XHTML and XML,
+and apply Internet protocols and HTTP communication mechanisms for web content delivery.
+</p>
+
+<br>
+
+</div>
+
+
+<div class="info-box">
+
+<h3>Assessment Details</h3>
+
+<p><b>Assessment Type :</b> Application-Based Questions</p>
+<p><b>Weightage :</b> 40%</p>
+<p><b>Subject :</b> Internet Programming</p>
+
+</div>
+
+
+
+<!-- QUESTION 1 -->
+
+<div class="question">
+
+<div class="question-title">
+Question 1 : Online Symposium Portal
+</div>
+
+<div class="content">
+
+<h3 class="sub-heading">Given HTML Structure</h3>
+
+<div class="code-box">
+
+&lt;form action="/register" method="POST"&gt;<br>
+&nbsp;&nbsp;&lt;input type="text" name="name"&gt;<br>
+&nbsp;&nbsp;&lt;input type="email" name="email"&gt;<br>
+&nbsp;&nbsp;&lt;button&gt;Submit&lt;/button&gt;<br>
+&lt;/form&gt;
+
+</div>
+
+
+<div class="answer">
+
+<h3>Answers</h3>
+
+<ol>
+
+<li>
+<strong>Missing Semantic Elements :</strong><br>
+Header, Main, Section, Labels and Footer elements are missing.
+</li>
+
+<li>
+<strong>Standards-Compliant Structure :</strong>
+
+<div class="code-box">
+
+&lt;header&gt;<br>
+&lt;h1&gt;Symposium Registration&lt;/h1&gt;<br>
+&lt;/header&gt;<br><br>
+
+&lt;main&gt;<br>
+&lt;section&gt;<br>
+&lt;form action="/register" method="POST"&gt;<br>
+&lt;label&gt;Name&lt;/label&gt;<br>
+&lt;input type="text" required&gt;<br><br>
+
+&lt;label&gt;Email&lt;/label&gt;<br>
+&lt;input type="email" required&gt;<br><br>
+
+&lt;button type="submit"&gt;Submit&lt;/button&gt;<br>
+&lt;/form&gt;<br>
+&lt;/section&gt;<br>
+&lt;/main&gt;
+
+</div>
+
+</li>
+
+<li>
+<strong>HTTP Request Interpretation :</strong><br>
+The browser sends an HTTP POST request containing the user's information to the server.
+</li>
+
+<li>
+<strong>HTTP Response Cycle :</strong><br>
+Browser → Server receives data → Processes request → Sends response → Browser displays the output.
+</li>
+
+<li>
+<strong>Usability and Accessibility Improvements :</strong>
+
+<ul>
+<li>Use semantic HTML5 elements.</li>
+<li>Add labels and required attributes.</li>
+<li>Provide validation messages.</li>
+<li>Improve keyboard accessibility.</li>
+<li>Maintain proper form structure.</li>
+</ul>
+
+</li>
+
+</ol>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<!-- QUESTION 2 -->
+
+<div class="question">
+
+<div class="question-title">
+Question 2 : Cross-Browser Compatibility Issue
+</div>
+
+<div class="content">
+
+<h3 class="sub-heading">Given HTML Structure</h3>
+
+<div class="code-box">
+
+&lt;html&gt;<br>
+&lt;head&gt;<br>
+&lt;title&gt;Company&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&lt;div&gt;<br>
+&lt;h1&gt;Welcome<br>
+&lt;p&gt;About us<br>
+&lt;/div&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+
+</div>
+
+
+<div class="answer">
+
+<h3>Answers</h3>
+
+<ol>
+
+<li>
+<strong>Improper Nesting and Missing Tags :</strong><br>
+The H1 and P tags are not properly closed.
+</li>
+
+<li>
+<strong>Browser Interpretation :</strong><br>
+Browsers may automatically correct invalid HTML differently, causing inconsistent layouts.
+</li>
+
+<li>
+<strong>Missing Semantic Elements :</strong><br>
+Header, Main and Section elements should be used.
+</li>
+
+<li>
+<strong>Correct W3C-Compliant HTML Structure :</strong>
+
+<div class="code-box">
+
+&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>
+&lt;head&gt;<br>
+&lt;title&gt;Company&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br><br>
+
+&lt;header&gt;<br>
+&lt;h1&gt;Welcome&lt;/h1&gt;<br>
+&lt;/header&gt;<br><br>
+
+&lt;main&gt;<br>
+&lt;section&gt;<br>
+&lt;p&gt;About Us&lt;/p&gt;<br>
+&lt;/section&gt;<br>
+&lt;/main&gt;<br><br>
+
+&lt;/body&gt;<br>
+&lt;/html&gt;
+
+</div>
+
+</li>
+
+<li>
+<strong>Cross-Browser Compatibility Techniques :</strong>
+
+<ul>
+<li>Validate HTML using W3C standards.</li>
+<li>Test across multiple browsers.</li>
+<li>Use semantic HTML5 tags.</li>
+<li>Apply responsive design practices.</li>
+<li>Avoid deprecated HTML elements.</li>
+</ul>
+
+</li>
+
+</ol>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<!-- QUESTION 3 -->
+
+<div class="question">
+
+<div class="question-title">
+Question 3 : Form Submission Failure
+</div>
+
+<div class="content">
+
+<h3 class="sub-heading">Given HTML Structure</h3>
+
+<div class="code-box">
+
+&lt;form action="/submit" method="GET"&gt;<br>
+&lt;input type="text" name="username"&gt;<br>
+&lt;input type="password" name="password"&gt;<br>
+&lt;button type="button"&gt;Login&lt;/button&gt;<br>
+&lt;/form&gt;
+
+</div>
+
+
+<div class="answer">
+
+<h3>Answers</h3>
+
+<ol>
+
+<li>
+<strong>Issues in the Form Configuration :</strong><br>
+The form uses the GET method for sensitive information and an incorrect button type.
+</li>
+
+<li>
+<strong>Why the HTTP Request Is Not Triggered :</strong><br>
+The button type is set to "button" instead of "submit."
+</li>
+
+<li>
+<strong>Role of the GET Method :</strong><br>
+GET appends data to the URL and is unsuitable for transmitting passwords.
+</li>
+
+<li>
+<strong>Correct Implementation :</strong>
+
+<div class="code-box">
+
+&lt;form action="/submit" method="POST"&gt;<br>
+&lt;label&gt;Username&lt;/label&gt;<br>
+&lt;input type="text" required&gt;<br><br>
+
+&lt;label&gt;Password&lt;/label&gt;<br>
+&lt;input type="password" required&gt;<br><br>
+
+&lt;button type="submit"&gt;Login&lt;/button&gt;<br>
+&lt;/form&gt;
+
+</div>
+
+</li>
+
+<li>
+<strong>Secure Data Transmission Improvements :</strong>
+
+<ul>
+<li>Use the POST method.</li>
+<li>Enable HTTPS.</li>
+<li>Validate user input.</li>
+<li>Encrypt sensitive information.</li>
+<li>Implement secure authentication mechanisms.</li>
+</ul>
+
+</li>
+
+</ol>
+
+</div>
+
+</div>
+</div>
+
+<div class="footer">
+
+<h3>Internet Programming Laboratory - CO-1 Assessment</h3>
+<p>Standards-Compliant Web Design Using HTML5, CSS3 and HTTP Concepts</p>
+
+</div>
+
+
+</div>
+
+</body>
+</html>
