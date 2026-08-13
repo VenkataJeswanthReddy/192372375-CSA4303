@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>StyleHub | Premium Fashion Store</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f8f8f8;
+color:#333;
+}
+
+header{
+background:#111;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+header h2{
+color:#FFD700;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#FFD700;
+}
+
+.hero{
+height:90vh;
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1600") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:30px;
+}
+
+button{
+padding:14px 35px;
+border:none;
+background:#FFD700;
+font-weight:bold;
+border-radius:30px;
+cursor:pointer;
+}
+
+section{
+padding:70px 8%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+margin-bottom:40px;
+color:#111;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.stat{
+background:white;
+padding:30px;
+text-align:center;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.stat h2{
+font-size:38px;
+color:#FFD700;
+}
+
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.cat{
+background:white;
+padding:30px;
+border-left:6px solid #FFD700;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.product{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+
+.product img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.product div{
+padding:20px;
+}
+
+.product h3{
+margin-bottom:10px;
+}
+
+.product button{
+width:100%;
+margin-top:15px;
+}
+
+.dashboard{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.panel{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.panel h2{
+margin-bottom:20px;
+color:#111;
+}
+
+.panel ul{
+padding-left:20px;
+}
+
+.panel li{
+margin:10px 0;
+}
+
+.contact{
+background:#111;
+color:white;
+padding:50px;
+border-radius:15px;
+text-align:center;
+}
+
+footer{
+background:black;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:40px;
+}
+
+.dashboard{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>👗 StyleHub</h2>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#">Collections</a>
+<a href="#">Products</a>
+<a href="#">Dashboard</a>
+<a href="#">Contact</a>
+
+</nav>
+
+</header>
+
+<div class="hero">
+
+<div>
+
+<h1>Discover Your Style</h1>
+
+<p>Fashion • Luxury • Trend • Lifestyle</p>
+
+<button onclick="demo()">Shop Collection</button>
+
+</div>
+
+</div>
+
+<section>
+
+<h1 class="title">Why Shop With Us?</h1>
+
+<div class="stats">
+
+<div class="stat">
+<h2>500+</h2>
+<p>Fashion Brands</p>
+</div>
+
+<div class="stat">
+<h2>10K+</h2>
+<p>Happy Customers</p>
+</div>
+
+<div class="stat">
+<h2>25K+</h2>
+<p>Products</p>
+</div>
+
+<div class="stat">
+<h2>24/7</h2>
+<p>Customer Support</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">Shop by Category</h1>
+
+<div class="categories">
+
+<div class="cat">
+<h3>👔 Men</h3>
+<p>Casual Wear, Formal Wear, Shoes, Watches</p>
+</div>
+
+<div class="cat">
+<h3>👗 Women</h3>
+<p>Dresses, Sarees, Handbags, Footwear</p>
+</div>
+
+<div class="cat">
+<h3>🧒 Kids</h3>
+<p>Clothing, Toys, School Collection</p>
+</div>
+
+<div class="cat">
+<h3>👜 Accessories</h3>
+<p>Bags, Sunglasses, Jewelry, Caps</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">Trending Products</h1>
+
+<div class="products">
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600">
+
+<div>
+
+<h3>Premium Jacket</h3>
+
+<p>₹2,499</p>
+
+<button onclick="demo()">Add to Cart</button>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600">
+
+<div>
+
+<h3>Women's Fashion</h3>
+
+<p>₹1,899</p>
+
+<button onclick="demo()">Add to Cart</button>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=600">
+
+<div>
+
+<h3>Luxury Shoes</h3>
+
+<p>₹3,299</p>
+
+<button onclick="demo()">Add to Cart</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">System Modules</h1>
+
+<div class="dashboard">
+
+<div class="panel">
+
+<h2>🛍 Customer Dashboard</h2>
+
+<ul>
+
+<li>User Registration & Login</li>
+<li>Search Products</li>
+<li>Browse Categories & Subcategories</li>
+<li>View Product Details</li>
+<li>Check Product Availability</li>
+<li>Add / Edit / Remove Cart</li>
+<li>Wishlist</li>
+<li>Checkout</li>
+<li>Secure Payment</li>
+<li>Track Orders</li>
+<li>Order History</li>
+<li>Logout</li>
+
+</ul>
+
+</div>
+
+<div class="panel">
+
+<h2>👨‍💼 Admin Dashboard</h2>
+
+<ul>
+
+<li>Add New Products</li>
+<li>Remove Products</li>
+<li>Update Price</li>
+<li>Edit Product Description</li>
+<li>Manage Categories</li>
+<li>Customer Details</li>
+<li>View Checkout Information</li>
+<li>Sales Report</li>
+<li>Inventory Management</li>
+<li>Offers & Discounts</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="contact">
+
+<h2>StyleHub Fashion Store</h2>
+
+<br>
+
+<p>📍 Chennai, Tamil Nadu</p>
+
+<p>📞 +91 9876543210</p>
+
+<p>📧 support@stylehub.com</p>
+
+<br>
+
+<button onclick="demo()">Contact Us</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>StyleHub Premium Fashion Shopping System</h3>
+
+<p>Internet Programming Lab Experiment</p>
+
+<p>© 2026 StyleHub. All Rights Reserved.</p>
+
+</footer>
+
+<script>
+
+function demo(){
+
+alert("Demo Fashion Shopping Website");
+
+}
+
+</script>
+
+</body>
+</html>
