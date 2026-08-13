@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RailConnect | Online Railway Reservation System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#eef4fa;
+color:#222;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:#003366;
+z-index:999;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#FFD700;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin:0 18px;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#FFD700;
+}
+
+.btn{
+padding:12px 24px;
+border:none;
+border-radius:30px;
+background:#FFD700;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+background:#f3c400;
+transform:translateY(-3px);
+}
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1600") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.overlay{
+background:rgba(0,0,0,.6);
+padding:60px;
+border-radius:20px;
+color:white;
+}
+
+.hero h1{
+font-size:58px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+line-height:30px;
+margin-bottom:30px;
+}
+
+section{
+padding:90px 8%;
+}
+
+.title{
+text-align:center;
+font-size:42px;
+margin-bottom:50px;
+color:#003366;
+}
+
+.search{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.search input,
+.search select{
+padding:15px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h2{
+margin-bottom:20px;
+color:#003366;
+}
+
+.card ul{
+padding-left:20px;
+}
+
+.card li{
+margin:10px 0;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.stat{
+background:#003366;
+color:white;
+padding:35px;
+text-align:center;
+border-radius:15px;
+}
+
+.stat h1{
+font-size:48px;
+color:#FFD700;
+}
+
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.contact form{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:15px;
+margin:12px 0;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:35px;
+}
+
+@media(max-width:900px){
+
+nav{
+display:none;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.contact{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">🚆 RailConnect</div>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#search">Search</a>
+<a href="#pnr">PNR</a>
+<a href="#admin">Admin</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<button class="btn">Login</button>
+
+</header>
+
+<div class="hero">
+
+<div class="overlay">
+
+<h1>Online Railway Reservation System</h1>
+
+<p>
+Search trains, check seat availability, book tickets securely,
+track PNR status, print tickets, and manage reservations from anywhere.
+</p>
+
+<button class="btn">Book Journey</button>
+
+</div>
+
+</div>
+
+<section>
+
+<h1 class="title">Railway Network</h1>
+
+<div class="stats">
+
+<div class="stat">
+<h1>2,500+</h1>
+<p>Daily Trains</p>
+</div>
+
+<div class="stat">
+<h1>8,000+</h1>
+<p>Stations</p>
+</div>
+
+<div class="stat">
+<h1>10 Lakh+</h1>
+<p>Passengers Served</p>
+</div>
+
+<div class="stat">
+<h1>24×7</h1>
+<p>Reservation Service</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="search">
+
+<h1 class="title">Search Trains</h1>
+
+<div class="search">
+
+<input type="text" placeholder="Origin Station">
+
+<input type="text" placeholder="Destination Station">
+
+<input type="date">
+
+<select>
+<option>Sleeper Class</option>
+<option>Third AC (3A)</option>
+<option>Second AC (2A)</option>
+<option>First AC (1A)</option>
+<option>Chair Car</option>
+</select>
+
+<button class="btn">Search Trains</button>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">Reservation Services</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>👤 Passenger Portal</h2>
+
+<ul>
+<li>User Registration</li>
+<li>Secure Login</li>
+<li>Book Tickets</li>
+<li>Select Journey Date</li>
+<li>Passenger Details</li>
+<li>Choose Class Type</li>
+<li>Seat Availability</li>
+<li>Online / Offline Payment</li>
+<li>Booking History</li>
+<li>Print e-Ticket</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>🎫 Ticket & PNR</h2>
+
+<ul>
+<li>Generate PNR Number</li>
+<li>Booking Confirmation</li>
+<li>Confirmed Status</li>
+<li>RAC Status</li>
+<li>Waiting List Status</li>
+<li>Email Confirmation</li>
+<li>Print Ticket</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>💳 Payment</h2>
+
+<ul>
+<li>UPI Payment</li>
+<li>Debit Card</li>
+<li>Credit Card</li>
+<li>Net Banking</li>
+<li>Cash Counter (Offline)</li>
+<li>Payment History</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="pnr">
+
+<h1 class="title">Check PNR Status</h1>
+
+<div class="search">
+
+<input type="text" placeholder="Enter 10 Digit PNR Number">
+
+<button class="btn">Check Status</button>
+
+</div>
+
+</section>
+
+<section id="admin">
+
+<h1 class="title">Administrator Panel</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>🚄 Train Management</h2>
+
+<ul>
+<li>Add / Update Trains</li>
+<li>Manage Routes</li>
+<li>Seat Availability</li>
+<li>Train Schedule</li>
+<li>Station Information</li>
+<li>Zone Management</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>📊 Reservation Management</h2>
+
+<ul>
+<li>Passenger Records</li>
+<li>Fare Details</li>
+<li>PNR Database</li>
+<li>Journey Reports</li>
+<li>Payment Records</li>
+<li>Booking History</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>💰 Refund & Cancellation</h2>
+
+<ul>
+<li>Cancel Ticket</li>
+<li>Refund Rules</li>
+<li>Refund Percentage</li>
+<li>Refund Processing</li>
+<li>Cancellation History</li>
+<li>Approve Refund</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">Cancellation & Refund Policy</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>❌ Ticket Cancellation</h2>
+
+<p>
+Passengers can cancel tickets by entering the PNR number. The cancellation request is sent to the administrator for verification.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>💸 Refund Policy</h2>
+
+<p>
+Refunds are calculated based on the reservation date, ticket fare, cancellation time, and applicable refund percentage.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>📧 Confirmation</h2>
+
+<p>
+After successful booking or cancellation, confirmation messages and payment details are sent to both the passenger and administrator.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">Contact Us</h1>
+
+<div class="contact">
+
+<div>
+
+<h2>RailConnect Support</h2>
+
+<br>
+
+<p>📍 Chennai, Tamil Nadu</p><br>
+
+<p>📞 +91 9876543210</p><br>
+
+<p>📧 support@railconnect.com</p><br>
+
+<p>🕒 Available 24×7</p>
+
+</div>
+
+<form>
+
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email">
+
+<input type="text" placeholder="Subject">
+
+<textarea rows="6" placeholder="Message"></textarea>
+
+<button class="btn">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>🚆 RailConnect Railway Reservation System</h2>
+
+<p style="margin-top:15px;">
+Internet Programming Laboratory Project
+</p>
+
+<p style="margin-top:10px;">
+© 2026 RailConnect. All Rights Reserved.
+</p>
+
+</footer>
+
+<script>
+
+document.querySelectorAll(".btn").forEach(button=>{
+
+button.onclick=function(){
+
+alert("Demo Railway Reservation Website.\nBackend functionality can be integrated using PHP, Java, JSP, Servlet, Node.js, or MySQL.");
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
