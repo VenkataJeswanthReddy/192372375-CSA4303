@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SweetDelight | Online Cake Ordering System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#fff7f8;
+color:#333;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:#ff4d6d;
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:white;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin:0 15px;
+font-weight:600;
+}
+
+nav a:hover{
+color:#ffe066;
+}
+
+.btn{
+padding:12px 24px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d6d;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1600") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+section{
+padding:80px 8%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+margin-bottom:40px;
+color:#ff4d6d;
+}
+
+.search{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.search input,.search select{
+padding:15px;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h2{
+color:#ff4d6d;
+margin-bottom:15px;
+}
+
+.card ul{
+padding-left:20px;
+}
+
+.card li{
+margin:10px 0;
+}
+
+.cakes{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.cake{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.cake img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.cake div{
+padding:20px;
+}
+
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.contact form{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+@media(max-width:900px){
+
+nav{
+display:none;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.contact{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">🎂 SweetDelight</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#cakes">Cakes</a>
+<a href="#student">Student</a>
+<a href="#admin">Admin</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<button class="btn">Login</button>
+
+</header>
+
+<div class="hero">
+
+<div>
+
+<h1>Online Cake Ordering System</h1>
+
+<p>Fresh Cakes • Fast Delivery • Secure Ordering • Doorstep Delivery</p>
+
+<button class="btn">Order Now</button>
+
+</div>
+
+</div>
+
+<section>
+
+<h1 class="title">Search Cakes</h1>
+
+<div class="search">
+
+<input type="text" placeholder="Search Cake">
+
+<select>
+<option>Category</option>
+<option>Birthday</option>
+<option>Wedding</option>
+<option>Anniversary</option>
+<option>Festival</option>
+</select>
+
+<select>
+<option>Sub Category</option>
+<option>Chocolate</option>
+<option>Vanilla</option>
+<option>Red Velvet</option>
+<option>Black Forest</option>
+</select>
+
+<select>
+<option>Price Range</option>
+<option>₹500 - ₹1000</option>
+<option>₹1000 - ₹2000</option>
+<option>₹2000+</option>
+</select>
+
+<button class="btn">Search</button>
+
+</div>
+
+</section>
+
+<section id="cakes">
+
+<h1 class="title">Popular Cakes</h1>
+
+<div class="cakes">
+
+<div class="cake">
+
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600">
+
+<div>
+
+<h2>Chocolate Cake</h2>
+
+<p>Rich Chocolate Cream Cake</p>
+
+<p><b>₹799</b></p>
+
+<button class="btn">Add to Cart</button>
+
+</div>
+
+</div>
+
+<div class="cake">
+
+<img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=600">
+
+<div>
+
+<h2>Red Velvet</h2>
+
+<p>Premium Red Velvet Cake</p>
+
+<p><b>₹999</b></p>
+
+<button class="btn">Add to Cart</button>
+
+</div>
+
+</div>
+
+<div class="cake">
+
+<img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600">
+
+<div>
+
+<h2>Black Forest</h2>
+
+<p>Fresh Black Forest Cake</p>
+
+<p><b>₹899</b></p>
+
+<button class="btn">Add to Cart</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="student">
+
+<h1 class="title">Student Features</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>👨‍🎓 User Module</h2>
+
+<ul>
+
+<li>Register</li>
+<li>Login</li>
+<li>Search Cake</li>
+<li>Filter by Category</li>
+<li>Filter by Sub Category</li>
+<li>Filter by Price</li>
+<li>View Cake List</li>
+<li>View Cake Description</li>
+<li>Add to Cart</li>
+<li>Place Order</li>
+<li>Add Shipping Address</li>
+<li>Update Shipping Address</li>
+<li>My Orders</li>
+<li>Shipping Status</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>🛒 Order Dashboard</h2>
+
+<ul>
+
+<li>Shopping Cart</li>
+<li>Checkout</li>
+<li>Payment</li>
+<li>Order Confirmation</li>
+<li>Delivery Tracking</li>
+<li>Order History</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="admin">
+
+<h1 class="title">Admin Dashboard</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>👨‍💼 Admin</h2>
+
+<ul>
+
+<li>Admin Login</li>
+<li>Manage Products</li>
+<li>Post Cake Details</li>
+<li>Upload Images</li>
+<li>Product Description</li>
+<li>Manage Orders</li>
+<li>Update Order Status</li>
+<li>Shipping Location</li>
+<li>Logout</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>📊 Store Reports</h2>
+
+<ul>
+
+<li>Total Cakes</li>
+<li>Pending Orders</li>
+<li>Delivered Orders</li>
+<li>Revenue</li>
+<li>Customer Feedback</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">Contact Us</h1>
+
+<div class="contact">
+
+<div>
+
+<h2>SweetDelight Cakes</h2>
+
+<br>
+
+<p>📍 Chennai, Tamil Nadu</p><br>
+
+<p>📞 +91 9876543210</p><br>
+
+<p>📧 support@sweetdelight.com</p><br>
+
+<p>🕒 Open 24 × 7</p>
+
+</div>
+
+<form>
+
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email">
+
+<input type="text" placeholder="Subject">
+
+<textarea rows="5" placeholder="Message"></textarea>
+
+<button class="btn">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>🎂 SweetDelight Cake Ordering System</h2>
+
+<p style="margin-top:15px;">Internet Programming Laboratory Project</p>
+
+<p style="margin-top:10px;">© 2026 SweetDelight. All Rights Reserved.</p>
+
+</footer>
+
+<script>
+
+document.querySelectorAll(".btn").forEach(btn=>{
+
+btn.onclick=function(){
+
+alert("Demo Website - Backend functionality can be added using PHP/Java/Node.js/MySQL.");
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
