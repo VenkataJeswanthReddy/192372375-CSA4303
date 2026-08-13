@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Flight Reservation System</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+/* Navigation Bar */
+
+nav{
+    background:#003366;
+    color:white;
+    padding:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+nav h1{
+    font-size:28px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+nav li{
+    cursor:pointer;
+}
+
+/* Hero Section */
+
+.hero{
+    background:linear-gradient(to right,#004e92,#000428);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.hero h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.hero button{
+    padding:12px 25px;
+    margin:5px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.login{
+    background:white;
+    color:#003366;
+}
+
+.register{
+    background:#00c6ff;
+    color:white;
+}
+
+/* Section */
+
+section{
+    padding:50px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:30px;
+    color:#003366;
+    font-size:35px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* Cards */
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#0057b8;
+    margin-bottom:15px;
+}
+
+.card ul{
+    padding-left:20px;
+    line-height:30px;
+}
+
+/* Search Form */
+
+.search-box{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+    max-width:900px;
+    margin:auto;
+}
+
+.search-box input,
+.search-box select{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:20px;
+    border-radius:8px;
+    border:1px solid gray;
+}
+
+.search-box button{
+    background:#003366;
+    color:white;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* Flight Cards */
+
+.flight-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+.flight-card p{
+    margin-bottom:10px;
+}
+
+.flight-card button{
+    background:#0077ff;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* Feedback */
+
+.feedback{
+    background:#eaf3ff;
+    text-align:center;
+    padding:50px;
+}
+
+.feedback input,
+.feedback textarea{
+
+    width:70%;
+    padding:12px;
+    margin:10px;
+    border-radius:8px;
+    border:1px solid gray;
+}
+
+.feedback button{
+    background:#003366;
+    color:white;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+}
+
+/* Footer */
+
+footer{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+.hero h2{
+    font-size:32px;
+}
+
+.feedback input,
+.feedback textarea{
+    width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<h1>SkyWings Airlines</h1>
+
+<ul>
+<li>Home</li>
+<li>Flights</li>
+<li>Tickets</li>
+<li>Admin</li>
+<li>Feedback</li>
+<li>Contact</li>
+</ul>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<div class="hero">
+
+<h2>Online Flight Reservation System</h2>
+
+<p>Search, Book and Manage Your Flights Anytime, Anywhere.</p>
+
+<button class="login">Login</button>
+<button class="register">Register</button>
+
+</div>
+
+
+<!-- LOGIN FEATURES -->
+
+<section>
+
+<h2 class="title">User Services</h2>
+
+<div class="container">
+
+<div class="card">
+<h3>Account Services</h3>
+<ul>
+<li>User Login</li>
+<li>Forgot Password</li>
+<li>Profile Management</li>
+<li>Booking History</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Ticket Services</h3>
+<ul>
+<li>My Tickets</li>
+<li>Cancel Ticket</li>
+<li>Print Ticket</li>
+<li>View Booking Status</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Travel Services</h3>
+<ul>
+<li>Travel Itinerary</li>
+<li>E-Ticket Download</li>
+<li>Confirmation Email</li>
+<li>Seat Selection</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SEARCH FLIGHTS -->
+
+<section>
+
+<h2 class="title">Search Flights</h2>
+
+<div class="search-box">
+
+<input type="text" placeholder="From">
+
+<input type="text" placeholder="Destination">
+
+<input type="date">
+
+<select>
+<option>Select Class</option>
+<option>Economy</option>
+<option>Business</option>
+<option>First Class</option>
+</select>
+
+<input type="number" placeholder="Number of Passengers">
+
+<button>Search Flights</button>
+
+</div>
+
+</section>
+
+
+<!-- AVAILABLE FLIGHTS -->
+
+<section>
+
+<h2 class="title">Available Flights</h2>
+
+<div class="container">
+
+<div class="flight-card">
+
+<h3>AI-203</h3>
+
+<p>Departure : 08:00 AM</p>
+<p>Arrival : 10:30 AM</p>
+<p>Seats Available : 6</p>
+<p>Fare : $120</p>
+
+<button>Book Ticket</button>
+
+</div>
+
+
+<div class="flight-card">
+
+<h3>IN-401</h3>
+
+<p>Departure : 01:30 PM</p>
+<p>Arrival : 03:50 PM</p>
+<p>Seats Available : 10</p>
+<p>Fare : $150</p>
+
+<button>Book Ticket</button>
+
+</div>
+
+
+<div class="flight-card">
+
+<h3>SK-782</h3>
+
+<p>Departure : 06:00 PM</p>
+<p>Arrival : 08:15 PM</p>
+<p>Seats Available : 4</p>
+<p>Fare : $210</p>
+
+<button>Book Ticket</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PAYMENT SERVICES -->
+
+<section>
+
+<h2 class="title">Reservation Services</h2>
+
+<div class="container">
+
+<div class="card">
+<h3>Booking Process</h3>
+<ul>
+<li>Select Flight</li>
+<li>Select Seats</li>
+<li>Passenger Details</li>
+<li>Book Ticket</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Payment Services</h3>
+<ul>
+<li>Secure Payment Gateway</li>
+<li>Online Payment</li>
+<li>Payment Confirmation</li>
+<li>E-Ticket Generation</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Booking Management</h3>
+<ul>
+<li>View Status</li>
+<li>Modify Reservation</li>
+<li>Cancel Ticket</li>
+<li>Print Ticket</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ADMIN PANEL -->
+
+<section>
+
+<h2 class="title">Administrator Panel</h2>
+
+<div class="container">
+
+<div class="card">
+<h3>Flight Management</h3>
+<ul>
+<li>Manage Flight Schedule</li>
+<li>Update Flight Details</li>
+<li>Manage Inventory</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Seat Management</h3>
+<ul>
+<li>Update Seat Availability</li>
+<li>Manage Reservations</li>
+<li>Real-Time Inventory</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>User Management</h3>
+<ul>
+<li>Manage User Accounts</li>
+<li>Booking Reports</li>
+<li>Admin Reports</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEEDBACK -->
+
+<div class="feedback">
+
+<h2>Customer Feedback</h2>
+
+<br>
+
+<input type="text" placeholder="Enter Your Name">
+
+<br>
+
+<input type="email" placeholder="Enter Email Address">
+
+<br>
+
+<textarea rows="5" placeholder="Share Your Experience"></textarea>
+
+<br>
+
+<button>Submit Feedback</button>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 Online Flight Reservation System | Internet Programming Lab Project</p>
+
+</footer>
+
+</body>
+</html>
