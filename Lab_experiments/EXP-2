@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RoyalStay Hotel | Luxury Hotel Booking System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5f7fa;
+color:#222;
+}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(15px);
+z-index:999;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#FFD700;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 18px;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#FFD700;
+}
+
+.btn{
+padding:12px 25px;
+background:#FFD700;
+border:none;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+background:#f5c400;
+transform:translateY(-3px);
+}
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.overlay{
+background:rgba(0,0,0,.55);
+padding:60px;
+border-radius:20px;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+line-height:30px;
+}
+
+section{
+padding:90px 8%;
+}
+
+.title{
+text-align:center;
+font-size:42px;
+margin-bottom:50px;
+color:#003366;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h2{
+color:#003366;
+margin-bottom:20px;
+}
+
+.card ul{
+padding-left:20px;
+}
+
+.card li{
+margin:10px 0;
+}
+
+.rooms{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.room{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.room img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.room div{
+padding:20px;
+}
+
+.search{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.search input,.search select{
+padding:15px;
+font-size:16px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.stat{
+background:#003366;
+color:white;
+padding:35px;
+border-radius:15px;
+text-align:center;
+}
+
+.stat h1{
+font-size:48px;
+color:#FFD700;
+}
+
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.contact form{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:15px;
+margin:12px 0;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:35px;
+}
+
+@media(max-width:900px){
+
+nav{
+display:none;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.contact{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">🏨 RoyalStay</div>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#rooms">Rooms</a>
+<a href="#users">Users</a>
+<a href="#admin">Admin</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<button class="btn">Login</button>
+
+</header>
+
+<div class="hero">
+
+<div class="overlay">
+
+<h1>Luxury Hotel Booking System</h1>
+
+<p>
+Book premium rooms, manage reservations, explore travel guides,
+and enjoy a seamless online hotel booking experience.
+</p>
+
+<button class="btn">Book Now</button>
+
+</div>
+
+</div>
+
+<section>
+
+<h1 class="title">Hotel Statistics</h1>
+
+<div class="stats">
+
+<div class="stat">
+<h1>250+</h1>
+<p>Luxury Rooms</p>
+</div>
+
+<div class="stat">
+<h1>40K+</h1>
+<p>Happy Guests</p>
+</div>
+
+<div class="stat">
+<h1>4.9★</h1>
+<p>Customer Rating</p>
+</div>
+
+<div class="stat">
+<h1>24/7</h1>
+<p>Customer Support</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="rooms">
+
+<h1 class="title">Room Types</h1>
+
+<div class="rooms">
+
+<div class="room">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600">
+
+<div>
+
+<h2>Standard Room</h2>
+
+<p>Comfortable stay with essential facilities.</p>
+
+<p><b>₹2,500 / Night</b></p>
+
+<button class="btn">Book</button>
+
+</div>
+
+</div>
+
+<div class="room">
+
+<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600">
+
+<div>
+
+<h2>Deluxe Room</h2>
+
+<p>Premium interiors with city view.</p>
+
+<p><b>₹4,000 / Night</b></p>
+
+<button class="btn">Book</button>
+
+</div>
+
+</div>
+
+<div class="room">
+
+<img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600">
+
+<div>
+
+<h2>Executive Suite</h2>
+
+<p>Luxury experience with premium services.</p>
+
+<p><b>₹6,500 / Night</b></p>
+
+<button class="btn">Book</button>
+
+</div>
+
+</div>
+
+<div class="room">
+
+<img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600">
+
+<div>
+
+<h2>Presidential Suite</h2>
+
+<p>Ultimate comfort with VIP facilities.</p>
+
+<p><b>₹12,000 / Night</b></p>
+
+<button class="btn">Book</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">Check Room Availability</h1>
+
+<div class="search">
+
+<input type="text" placeholder="Destination">
+
+<input type="date">
+
+<input type="date">
+
+<select>
+
+<option>1 Guest</option>
+<option>2 Guests</option>
+<option>3 Guests</option>
+<option>4 Guests</option>
+
+</select>
+
+<button class="btn">Search Rooms</button>
+
+</div>
+
+</section>
+
+<section id="users">
+
+<h1 class="title">User Functionalities</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>👤 Registered Users</h2>
+
+<ul>
+
+<li>Register & Login</li>
+<li>View / Modify Profile</li>
+<li>Book Rooms</li>
+<li>Check Room Availability</li>
+<li>View Booking History</li>
+<li>Modify Booking (3 Days Before Arrival)</li>
+<li>Cancel Booking</li>
+<li>Secure Online Payment</li>
+<li>Email Confirmation</li>
+<li>Reviews & Ratings</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>📅 Booking Dashboard</h2>
+
+<ul>
+
+<li>Upcoming Reservations</li>
+<li>Past Bookings</li>
+<li>Arrival Date</li>
+<li>Departure Date</li>
+<li>Payment Status</li>
+<li>Booking Summary</li>
+<li>Download Invoice</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="admin">
+
+<h1 class="title">Administrator Panel</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>⚙ Hotel Management</h2>
+
+<ul>
+
+<li>Manage Hotel Listings</li>
+<li>Update Room Quantity</li>
+<li>Modify Room Prices</li>
+<li>Room Availability</li>
+<li>Manage Customer Accounts</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>📋 Booking Management</h2>
+
+<ul>
+
+<li>Edit Booking Details</li>
+<li>Cancel Reservations</li>
+<li>Booking Reports</li>
+<li>Payment Verification</li>
+<li>Customer Information</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>🌍 Website Management</h2>
+
+<ul>
+
+<li>Room Information</li>
+<li>About Us</li>
+<li>Contact Us</li>
+<li>Customer Service Q&A</li>
+<li>Travel Guide</li>
+<li>Privacy Policy</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">Customer Service</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>❓ Frequently Asked Questions</h2>
+
+<p><b>Q:</b> Can I cancel my booking?</p>
+
+<p>Yes, up to 3 days before arrival.</p>
+
+<br>
+
+<p><b>Q:</b> Is online payment secure?</p>
+
+<p>Yes, all payments are encrypted.</p>
+
+</div>
+
+<div class="card">
+
+<h2>🧳 Local Travel Guide</h2>
+
+<ul>
+
+<li>Nearby Tourist Attractions</li>
+<li>Airport Pickup</li>
+<li>Railway Station Guide</li>
+<li>Taxi Services</li>
+<li>Shopping Centers</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>🔒 Privacy Policy</h2>
+
+<p>
+All personal information and payment details are securely stored
+and protected according to industry standards.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">Contact Us</h1>
+
+<div class="contact">
+
+<div>
+
+<h2>RoyalStay Hotel</h2>
+
+<br>
+
+<p>📍 Chennai, Tamil Nadu</p><br>
+
+<p>📞 +91 9876543210</p><br>
+
+<p>📧 support@royalstay.com</p><br>
+
+<p>🕒 Open 24 Hours</p>
+
+</div>
+
+<form>
+
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email">
+
+<input type="text" placeholder="Subject">
+
+<textarea rows="6" placeholder="Message"></textarea>
+
+<button class="btn">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>🏨 RoyalStay Hotel Booking Management System</h2>
+
+<p style="margin-top:15px;">
+Internet Programming Laboratory Project
+</p>
+
+<p style="margin-top:10px;">
+© 2026 RoyalStay Hotels. All Rights Reserved.
+</p>
+
+</footer>
+
+<script>
+
+const buttons=document.querySelectorAll(".btn");
+
+buttons.forEach(btn=>{
+
+btn.addEventListener("click",function(){
+
+alert("Demo Website - Backend Functionality Can Be Connected Using PHP/Java/JSP/Node.js");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
