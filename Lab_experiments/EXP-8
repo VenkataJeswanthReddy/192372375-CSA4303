@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>MedCare Hospital | Online Appointment Booking System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f4fbff;
+color:#333;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:#0a6ebd;
+z-index:1000;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#fff;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 16px;
+font-weight:600;
+}
+
+nav a:hover{
+color:#ffd43b;
+}
+
+.btn{
+padding:12px 24px;
+border:none;
+border-radius:30px;
+background:white;
+color:#0a6ebd;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=1600") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:58px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+line-height:32px;
+}
+
+section{
+padding:90px 8%;
+}
+
+.title{
+text-align:center;
+font-size:42px;
+color:#0a6ebd;
+margin-bottom:45px;
+}
+
+.search{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.search input,
+.search select{
+padding:15px;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h2{
+color:#0a6ebd;
+margin-bottom:15px;
+}
+
+.card ul{
+padding-left:20px;
+}
+
+.card li{
+margin:10px 0;
+}
+
+.doctors{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.doctor{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.doctor img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.doctor div{
+padding:20px;
+}
+
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.contact form{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+@media(max-width:900px){
+
+nav{
+display:none;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.contact{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">🏥 MedCare</div>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#search">Doctors</a>
+<a href="#patient">Patient</a>
+<a href="#admin">Admin</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<button class="btn">Login</button>
+
+</header>
+
+<div class="hero">
+
+<div>
+
+<h1>Online Hospital Appointment Booking</h1>
+
+<p>Find Doctors • Book Appointments • Manage Health Records • Secure Healthcare Services</p>
+
+<button class="btn">Book Appointment</button>
+
+</div>
+
+</div>
+
+<section id="search">
+
+<h1 class="title">Search Doctors & Hospitals</h1>
+
+<div class="search">
+
+<input type="text" placeholder="Search Doctor">
+
+<select>
+<option>Specialty</option>
+<option>Cardiology</option>
+<option>Neurology</option>
+<option>Orthopedics</option>
+<option>Dermatology</option>
+<option>Pediatrics</option>
+</select>
+
+<input type="text" placeholder="Location">
+
+<input type="date">
+
+<button class="btn">Search</button>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">Popular Specialists</h1>
+
+<div class="doctors">
+
+<div class="doctor">
+
+<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600">
+
+<div>
+
+<h2>Cardiologist</h2>
+
+<p>Heart & Blood Vessel Specialist</p>
+
+<p><b>Available Today</b></p>
+
+<button class="btn">Book Now</button>
+
+</div>
+
+</div>
+
+<div class="doctor">
+
+<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600">
+
+<div>
+
+<h2>Dermatologist</h2>
+
+<p>Skin & Hair Specialist</p>
+
+<p><b>Available Tomorrow</b></p>
+
+<button class="btn">Book Now</button>
+
+</div>
+
+</div>
+
+<div class="doctor">
+
+<img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600">
+
+<div>
+
+<h2>Pediatrician</h2>
+
+<p>Child Healthcare Specialist</p>
+
+<p><b>Available Today</b></p>
+
+<button class="btn">Book Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="patient">
+
+<h1 class="title">Patient Dashboard</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>👨‍⚕ Patient Features</h2>
+
+<ul>
+
+<li>Signup / Login</li>
+<li>Search Doctor by Specialty</li>
+<li>Search Hospital by Location</li>
+<li>View Hospital List</li>
+<li>Book Appointment</li>
+<li>Schedule Timing</li>
+<li>Cancel Appointment</li>
+<li>View Appointment Status</li>
+<li>Appointment History</li>
+<li>Past Check-In Details</li>
+<li>Medical Records</li>
+<li>Doctor Reviews & Ratings</li>
+<li>Google Map for Hospital</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>📅 Appointment Module</h2>
+
+<ul>
+
+<li>Search Module</li>
+<li>Appointment Booking</li>
+<li>Appointment Management</li>
+<li>Check-In Form</li>
+<li>Email & SMS Reminder</li>
+<li>Flexible Date & Time</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="admin">
+
+<h1 class="title">Hospital & Admin Dashboard</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>🏥 Hospital Module</h2>
+
+<ul>
+
+<li>Hospital Registration</li>
+<li>Hospital Login</li>
+<li>Create Hospital Details</li>
+<li>Update Hospital Details</li>
+<li>Update Location</li>
+<li>Manage Doctors</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>👨‍💼 Admin Features</h2>
+
+<ul>
+
+<li>Manage Appointments</li>
+<li>Manage Doctors</li>
+<li>Appointment Statistics</li>
+<li>Patient Records</li>
+<li>Rating Details</li>
+<li>Reports Dashboard</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>📊 Healthcare Services</h2>
+
+<ul>
+
+<li>Appointment Calendar</li>
+<li>Doctor Availability</li>
+<li>Hospital Search</li>
+<li>Emergency Support</li>
+<li>Medical Notifications</li>
+<li>Secure Patient Data</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">Contact MedCare</h1>
+
+<div class="contact">
+
+<div>
+
+<h2>🏥 MedCare Hospital</h2>
+
+<br>
+
+<p>📍 Chennai, Tamil Nadu</p><br>
+
+<p>📞 +91 9876543210</p><br>
+
+<p>📧 support@medcare.com</p><br>
+
+<p>🕒 Open 24 × 7</p>
+
+</div>
+
+<form>
+
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email">
+
+<input type="text" placeholder="Subject">
+
+<textarea rows="5" placeholder="Message"></textarea>
+
+<button class="btn">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>🏥 MedCare Hospital Appointment Booking System</h2>
+
+<p style="margin-top:15px;">Internet Programming Laboratory Project</p>
+
+<p style="margin-top:10px;">© 2026 MedCare Hospital. All Rights Reserved.</p>
+
+</footer>
+
+<script>
+
+document.querySelectorAll(".btn").forEach(btn=>{
+
+btn.onclick=function(){
+
+alert("Demo Hospital Appointment Booking Website - Backend can be integrated using PHP, Java, Node.js, ASP.NET or MySQL.");
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
